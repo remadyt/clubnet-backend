@@ -12,7 +12,11 @@ export class SteamStrategy extends PassportStrategy(Strategy) {
     });
   }
 
-  async validate(identifier: string, profile: any, done: (err?: any, user?: any) => void): Promise<any> {
+  async validate(
+    identifier: string,
+    profile: any,
+    done: (err?: any, user?: any) => void,
+  ): Promise<any> {
     const { displayName, photos } = profile;
 
     const user = {

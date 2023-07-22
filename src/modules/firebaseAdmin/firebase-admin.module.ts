@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import * as admin from 'firebase-admin';
-import * as serviceAccount from '../serviceAccountKey.json';
+import * as serviceAccount from '../../../serviceAccountKey.json';
 import { ServiceAccount } from 'firebase-admin';
 
 @Module({
