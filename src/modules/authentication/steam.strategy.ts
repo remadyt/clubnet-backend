@@ -6,13 +6,16 @@ import { Strategy } from 'passport-steam';
 export class SteamStrategy extends PassportStrategy(Strategy) {
   constructor() {
     super({
-      returnURL: 'http://localhost:3000/auth/steam/return',
-      realm: 'http://localhost:3000/',
-      apiKey: 'YOUR_STEAM_API_KEY',
+      returnURL: `${process.env.AUTH_FUNCTION_DOMAIN}/auth/steam/return`,
+      realm: process.env.AUTH_FUNCTION_DOMAIN,
+      apiKey: process.env.STEAM_API_KEY,
+      state: true,
+      passReqToCallback: true,
     });
   }
 
   async validate(
+    req,
     identifier: string,
     profile: any,
     done: (err?: any, user?: any) => void,

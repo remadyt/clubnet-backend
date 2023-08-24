@@ -45,6 +45,15 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Running Firebase Functions
+```bash
+# start Firebase Functions local
+$ npm run serve:watch 
+
+# deploying to Firebase Functions
+$ npm run deploy
+````
+
 ## Test
 
 ```bash
